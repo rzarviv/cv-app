@@ -234,7 +234,8 @@ export default function Controller({
             <div className="flex w-full justify-evenly rounded-md border-2  border-sky-500 shadow-md">
               <button
                 onClick={() => setShowStyling(() => false)}
-                className={"w-[50%] " + 
+                className={
+                  "w-[50%] " +
                   (!showStyling
                     ? "rounded border-sky-500 bg-slate-800  text-lg text-white"
                     : "text-sky-500 hover:rounded hover:bg-sky-500 hover:font-bold hover:text-white")
@@ -243,7 +244,8 @@ export default function Controller({
               </button>
               <button
                 onClick={() => setShowStyling(() => true)}
-                className={"w-[50%] " + 
+                className={
+                  "w-[50%] " +
                   (showStyling
                     ? "rounded border-sky-500 bg-slate-800  text-lg text-white"
                     : "text-sky-500 hover:rounded hover:bg-sky-500 hover:font-bold hover:text-white ")

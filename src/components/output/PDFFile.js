@@ -1,6 +1,6 @@
 import React from "react";
-import {forwardRef} from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { forwardRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
   faGlobe,
@@ -9,16 +9,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import uniqid from "uniqid";
 import ThemeContext from "../../store/theme-context";
-import {useContext} from "react";
-import {formatDate, formatDateOrBlank} from "../../tools/formatDate";
+import { useContext } from "react";
+import { formatDate, formatDateOrBlank } from "../../tools/formatDate";
 
-//this file length is sub optimal to say the least and it can be broken down to multiple componenets
-//Altough due to npm react-to-print issue related to printing multiple components
-//I wasn't able to do it without using one big componenet.
+//this file length is sub optimal to say the least and it can be broken down to multiple components
+//Although due to npm react-to-print issue related to printing multiple components
+//I wasn't able to do it without using one big component.
 
 const PDFFile = forwardRef(
   (
-    {personalInfo, workExpArr, educationArr, projectsArr, custom, skills},
+    { personalInfo, workExpArr, educationArr, projectsArr, custom, skills },
     ref
   ) => {
     const ctx = useContext(ThemeContext);
@@ -28,8 +28,7 @@ const PDFFile = forwardRef(
         <div className="flex flex-col justify-center items-center  border-sky-500">
           {personalInfo.firstName && personalInfo.lastName ? (
             <div
-              className={`flex gap-2 text-3xl ${ctx.theme.text} font-bold ${ctx.theme.bg} px-2 pt-2 text-center justify-center w-full`}
-            >
+              className={`flex gap-2 text-3xl ${ctx.theme.text} font-bold ${ctx.theme.bg} px-2 pt-2 text-center justify-center w-full`}>
               <h1>{personalInfo.firstName}</h1>
               <h1>{personalInfo.lastName}</h1>
             </div>
@@ -38,8 +37,7 @@ const PDFFile = forwardRef(
           )}
 
           <div
-            className={`flex gap-2 text-white w-full ${ctx.theme.bg} items-center justify-center px-2 pb-1 text-center`}
-          >
+            className={`flex gap-2 text-white w-full ${ctx.theme.bg} items-center justify-center px-2 pb-1 text-center`}>
             <div className="flex justify-center items-center gap-1 ">
               {personalInfo.phoneNumber && (
                 <>
@@ -79,8 +77,7 @@ const PDFFile = forwardRef(
                       className=" text-left"
                       href={personalInfo.linkedinLink}
                       target="_blank"
-                      rel="noreferrer"
-                    >
+                      rel="noreferrer">
                       Linkedin
                     </a>
                   </>
@@ -96,8 +93,7 @@ const PDFFile = forwardRef(
                       className=" text-left"
                       href={personalInfo.websiteLink}
                       target="_blank"
-                      rel="noreferrer"
-                    >
+                      rel="noreferrer">
                       Portfolio
                     </a>
                   </>
@@ -108,8 +104,7 @@ const PDFFile = forwardRef(
           {personalInfo.summarySection && (
             <div className=" w-full px-8  pt-2  ">
               <h1
-                className={` font-medium  ${ctx.theme.text} text-xl border-b-2 ${ctx.theme.border}`}
-              >
+                className={` font-medium  ${ctx.theme.text} text-xl border-b-2 ${ctx.theme.border}`}>
                 Summary
               </h1>
               <p className="text-slate-800 pl-2 py-1 break  text-left">
@@ -121,8 +116,7 @@ const PDFFile = forwardRef(
         <div className="flex flex-col  gap-2 border-sky-500 px-8 ">
           {projectsArr.length >= 1 ? (
             <h1
-              className={`font-medium  ${ctx.theme.text} text-lg border-b-2 ${ctx.theme.border}`}
-            >
+              className={`font-medium  ${ctx.theme.text} text-lg border-b-2 ${ctx.theme.border}`}>
               Projects
             </h1>
           ) : (
@@ -177,8 +171,7 @@ const PDFFile = forwardRef(
         <div className="flex flex-col gap-2 border-sky-500 px-8  ">
           {workExpArr.length >= 1 ? (
             <h1
-              className={`font-medium  ${ctx.theme.text} text-lg border-b-2 ${ctx.theme.border}`}
-            >
+              className={`font-medium  ${ctx.theme.text} text-lg border-b-2 ${ctx.theme.border}`}>
               Work Experience
             </h1>
           ) : (
@@ -241,8 +234,7 @@ const PDFFile = forwardRef(
         <div className="flex flex-col   border-sky-500 px-8 ">
           {custom.sectionTitle ? (
             <h1
-              className={`font-medium  ${ctx.theme.text} text-lg border-b-2 ${ctx.theme.border}`}
-            >
+              className={`font-medium  ${ctx.theme.text} text-lg border-b-2 ${ctx.theme.border}`}>
               {custom.sectionTitle}
             </h1>
           ) : (
@@ -305,8 +297,7 @@ const PDFFile = forwardRef(
         <div className="flex flex-col gap-2 border-sky-500 px-8  ">
           {educationArr.length >= 1 ? (
             <h1
-              className={`font-medium  ${ctx.theme.text} text-lg border-b-2 ${ctx.theme.border}`}
-            >
+              className={`font-medium  ${ctx.theme.text} text-lg border-b-2 ${ctx.theme.border}`}>
               Education
             </h1>
           ) : (
@@ -322,11 +313,13 @@ const PDFFile = forwardRef(
                 </div>
                 <div className="flex gap-2  items-center">
                   <p className="italic text-sm">
-                    {formatDateOrBlank(education.startDate) /*() => {
+                    {
+                      formatDateOrBlank(education.startDate) /*() => {
                       return formatDate(education.startDate) === "present"
                         ? ""
                         : formatDate(education.startDate);
-                    }*/}
+                    }*/
+                    }
                   </p>
                   <p>-</p>
                   <p className="italic text-sm">
@@ -374,8 +367,7 @@ const PDFFile = forwardRef(
         <div className="flex flex-col   border-sky-500 px-8  ">
           {skills.skill1 !== "" ? (
             <h1
-              className={`font-medium  ${ctx.theme.text} text-lg border-b-2 ${ctx.theme.border}`}
-            >
+              className={`font-medium  ${ctx.theme.text} text-lg border-b-2 ${ctx.theme.border}`}>
               Skills
             </h1>
           ) : (
