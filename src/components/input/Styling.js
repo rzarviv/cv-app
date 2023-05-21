@@ -1,21 +1,19 @@
 import React from "react";
 import { useContext } from "react";
 import ThemeContext from "../../store/theme-context";
-import ClassNames from "classnames";
+import themes2 from "../UI/themes";
 
 const StylingElement = (props) => {
   const ctx = useContext(ThemeContext);
   const themeName = String(props.name);
   const themeText = capitalize(themeName);
-  const colorLeft = ClassNames(props.colorLeft, "styling-element-left");
-  const colorRight = ClassNames(props.colorRight, "styling-element-right");
 
   return (
     <div className="relative flex h-12 sm:w-full">
-      <div className={colorLeft}></div>
-      <div className={colorRight}></div>
+      <div className={`styling-element-left ${props.colorLeft}`}></div>
+      <div className={`styling-element-right ${props.colorRight}`}></div>
       <button
-        className="absolute left-[50%] translate-x-[-50%] translate-y-[-50%]  top-[50%] rounded font-bold hover:text-xl text-white "
+        className="absolute left-[50%] translate-x-[-50%] translate-y-[-50%] top-[50%] rounded font-bold hover:text-xl text-white "
         onClick={() => ctx.onChangeTheme(themeName)}
         type="button">
         {themeText}
@@ -38,7 +36,25 @@ const Styling = () => {
     <div className="w-full h-full max-w-[700px] ">
       <h1 className="text-3xl text-sky-500 font-bold px-10 py-2">Theme:</h1>
       <div className="px-10 h-fit gap-2 flex flex-wrap ">
-        <StylingElement
+        {Array.from(themes2.entries()).map(([themeName, theme]) => {
+          return (
+            <StylingElement
+              key={themeName}
+              name={themeName}
+              colorLeft={theme.bg}
+              colorRight={theme.text.replace("text-", "bg-")}
+            />
+          );
+        })}
+
+        {/*themes2.forEach((theme, themeName) => {
+          <StylingElement
+            name={themeName}
+            colorLeft={theme.bg}
+            colorRight={String(theme.text).replace("bg-", "text-")}
+          />;
+        })*/}
+        {/*<StylingElement
           name="marshmallow"
           colorLeft="bg-[#372948]"
           colorRight="bg-pink-400"
@@ -77,7 +93,7 @@ const Styling = () => {
           name="lanister"
           colorLeft="bg-[#DFB160]"
           colorRight="bg-[#5F093D]"
-        />
+  />*/}
       </div>
     </div>
   );

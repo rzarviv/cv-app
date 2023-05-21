@@ -29,12 +29,7 @@ const WorkExpOutput = ({workExpArr}) => {
             </div>
             <div className="flex gap-2  items-center">
               <p className="italic text-sm">
-                {formatDateOrBlank(work.startDate)
-                /* {() => {
-                  return formatDate(work.startDate) === "present"
-                    ? ""
-                    : formatDate(work.startDate);
-                }} */}
+                {formatDateOrBlank(work.startDate)}
               </p>
               <p>-</p>
               <p className="italic text-sm">{formatDate(work.endDate)}</p>
