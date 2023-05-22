@@ -2,6 +2,7 @@ import { formatDate, formatDateOrBlank } from "../../tools/formatDate";
 import uniqid from "uniqid";
 import { useContext } from "react";
 import ThemeContext from "../../store/theme-context";
+import BulletPoint from "../UI/bulletPoint";
 
 export default function WorkExpOutput({ educationArr }) {
   const ctx = useContext(ThemeContext);
@@ -32,38 +33,10 @@ export default function WorkExpOutput({ educationArr }) {
             </div>
           </div>
           <div className="flex flex-col pl-3 ">
-            {education.bulletPoint1 ? (
-              <div className="flex gap-1">
-                <p>•</p>
-                <p className="text-slate-800">{education.bulletPoint1}</p>
-              </div>
-            ) : (
-              ""
-            )}
-            {education.bulletPoint2 ? (
-              <div className="flex gap-1">
-                <p>•</p>
-                <p className="text-slate-800">{education.bulletPoint2}</p>
-              </div>
-            ) : (
-              ""
-            )}
-            {education.bulletPoint3 ? (
-              <div className="flex gap-1">
-                <p>•</p>
-                <p className="text-slate-800">{education.bulletPoint3}</p>
-              </div>
-            ) : (
-              ""
-            )}
-            {education.bulletPoint4 ? (
-              <div className="flex gap-1">
-                <p>•</p>
-                <p className="text-slate-800">{education.bulletPoint4}</p>
-              </div>
-            ) : (
-              ""
-            )}
+            <BulletPoint text={education.bulletPoint1}/>
+            <BulletPoint text={education.bulletPoint2}/>
+            <BulletPoint text={education.bulletPoint3}/>
+            <BulletPoint text={education.bulletPoint4}/>
           </div>
         </div>
       ))}

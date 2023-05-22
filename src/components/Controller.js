@@ -1,13 +1,12 @@
 import { faFileInvoice } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState, createRef } from "react";
+import { useState, createRef, lazy, Suspense } from "react";
 import { useReactToPrint } from "react-to-print";
 import uniqid from "uniqid";
 import Form from "./input/Form";
 import CvPreview from "./output/CvPreview";
 import { motion } from "framer-motion";
 import PDFFile from "./output/PDFFile";
-import Styling from "./input/Styling";
 
 export default function Controller({
   handleSuccessModal,
@@ -207,6 +206,8 @@ export default function Controller({
     content: () => componentRef.current,
   });
 
+  const Styling = lazy(() => import("../components/input/Styling"));
+
   return (
     <div className="relative flex flex-col">
       <motion.div
@@ -234,7 +235,8 @@ export default function Controller({
             <div className="flex w-full justify-evenly rounded-md border-2  border-sky-500 shadow-md">
               <button
                 onClick={() => setShowStyling(() => false)}
-                className={"w-[50%] " + 
+                className={
+                  "w-[50%] " +
                   (!showStyling
                     ? "rounded border-sky-500 bg-slate-800  text-lg text-white"
                     : "text-sky-500 hover:rounded hover:bg-sky-500 hover:font-bold hover:text-white")
@@ -243,7 +245,8 @@ export default function Controller({
               </button>
               <button
                 onClick={() => setShowStyling(() => true)}
-                className={"w-[50%] " + 
+                className={
+                  "w-[50%] " +
                   (showStyling
                     ? "rounded border-sky-500 bg-slate-800  text-lg text-white"
                     : "text-sky-500 hover:rounded hover:bg-sky-500 hover:font-bold hover:text-white ")
@@ -252,7 +255,11 @@ export default function Controller({
               </button>
             </div>
 
-            {showStyling && <Styling />}
+            {showStyling && (
+              <Suspense fallback={<h1>loading...</h1>}>
+                <Styling />
+              </Suspense>
+            )}
             {!showStyling && (
               <Form
                 personalInfo={personalInfo}

@@ -2,7 +2,7 @@ import "./index.css";
 import Controller from "./components/Controller";
 import ThemeContext from "./store/theme-context";
 import {useState} from "react";
-import themes from "./components/UI/themes";
+import themes2 from "./components/UI/themes";
 
 function App() {
   const [theme, setTheme] = useState({
@@ -13,7 +13,9 @@ function App() {
   });
   function handleTheme(themeInput) {
     setTheme(() => {
-      return themes[`${themeInput}`];
+      //console.log(themes[`${themeInput}`].bg);
+      //console.log(themes[`${themeInput}`].text);
+      return themes2.get(themeInput);
     });
   }
 
