@@ -214,8 +214,8 @@ export default function Controller({
         animate={{ y: 0 }}
         initial={{ y: -100 }}
         transition={{ ease: "easeIn", duration: 0.4 }}
-        className="header text-xxl box-border flex w-full items-center justify-between gap-5 bg-sky-500 p-3 pb-24 font-bold text-white sm:flex-col sm:gap-0 ">
-        <p className="pl-4 text-center text-4xl sm:pl-0 sm:text-2xl ">
+        className="header text-xxl box-border flex w-full items-center justify-between gap-5 bg-sky-500 p-3 pb-24 font-bold text-white sm:flex-col sm:gap-0">
+        <p className="pl-4 text-center text-4xl sm:pl-0 sm:text-2xl">
           Easy CV
         </p>
         <div className="flex">
@@ -225,8 +225,8 @@ export default function Controller({
         </div>
       </motion.div>
 
-      <div className="flex items-center justify-center ">
-        <div className="absolute top-20 flex justify-evenly gap-5 sm:flex-col sm:items-center md:flex-col lg:flex-row ">
+      <div className="flex items-center justify-center">
+        <div className="absolute top-20 flex justify-evenly gap-5 sm:flex-col sm:items-center md:flex-col lg:flex-row">
           <motion.div
             animate={{ y: 0 }}
             initial={{ y: 100 }}
@@ -238,7 +238,7 @@ export default function Controller({
                 className={
                   "w-[50%] " +
                   (!showStyling
-                    ? "rounded border-sky-500 bg-slate-800  text-lg text-white"
+                    ? "rounded border-sky-500 bg-slate-800 text-lg text-white"
                     : "text-sky-500 hover:rounded hover:bg-sky-500 hover:font-bold hover:text-white")
                 }>
                 Info
@@ -322,7 +322,7 @@ export default function Controller({
           animate={{ opacity: 1, scale: 1 }}
           initial={{ opacity: 0.2, scale: 0 }}
           transition={{ ease: "easeInOut", duration: 0.4 }}
-          className="fixed bottom-[0px] w-full rounded-md border-2 border-sky-500 bg-sky-500 px-2 text-2xl font-bold text-white sm:block md:block lg:hidden ">
+          className="fixed bottom-[0px] w-full rounded-md border-2 border-sky-500 bg-sky-500 px-2 text-2xl font-bold text-white sm:block md:block lg:hidden">
           <FontAwesomeIcon icon={faFileInvoice} /> Preview/Export
         </motion.button>
       </div>

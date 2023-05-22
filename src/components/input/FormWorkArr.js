@@ -21,7 +21,7 @@ export default function FormWorkArr({ workArr, handleDelete }) {
                     {work.company}
                   </h1>
                   <p className="text-sky-500">-</p>
-                  <h1 className="text-white ">{work.position}</h1>
+                  <h1 className="text-white">{work.position}</h1>
                 </div>
 
                 <button

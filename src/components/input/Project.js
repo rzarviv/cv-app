@@ -41,7 +41,7 @@ export default function Project({
   useEffect(() => clearBulletPoints(), [projectsArr]);
 
   return (
-    <div className="flex flex-col gap-2 ">
+    <div className="flex flex-col gap-2">
       <div className="flex justify-evenly sm:flex-col sm:max-w-[300px]">
         <div className="flex flex-col">
           <label htmlFor="company">Project Name:</label>
@@ -84,7 +84,7 @@ export default function Project({
         </div>
       </div>
 
-      <div className=" flex justify-evenly gap-2 py-2 ">
+      <div className=" flex justify-evenly gap-2 py-2">
         <motion.button
           whileTap={{scale: 0.8}}
           type="button"

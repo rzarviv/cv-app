@@ -53,7 +53,7 @@ export default function Form({
       {showSuccessModal && <SuccessModal message={successModalMessage} />}
 
       <form className="">
-        <fieldset className="flex flex-col gap-2 ">
+        <fieldset className="flex flex-col gap-2">
           <h1 className="form-title">Personal Information</h1>
           <PersonalInfoInput
             handlePersonalInfoChange={handlePersonalInfoChange}
@@ -62,7 +62,7 @@ export default function Form({
             showSummary={showSummary}
           />
         </fieldset>
-        <fieldset className="flex flex-col gap-2 ">
+        <fieldset className="flex flex-col gap-2">
           <h1 className="form-title">Work Experience</h1>
           <WorkExp
             key={uniqid}
@@ -75,7 +75,7 @@ export default function Form({
           />
           <FormWorkArr handleDelete={handleDelete} workArr={workArr} />
         </fieldset>
-        <fieldset className="flex flex-col gap-2 ">
+        <fieldset className="flex flex-col gap-2">
           <h1 className="form-title">Education</h1>
           <Education
             handleEducation={handleEducation}
@@ -90,7 +90,7 @@ export default function Form({
             handleDelete={handleDelete}
           />
         </fieldset>
-        <fieldset className="flex flex-col gap-2 ">
+        <fieldset className="flex flex-col gap-2">
           <h1 className="form-title">Projects</h1>
 
           <Project
@@ -106,7 +106,7 @@ export default function Form({
             handleDelete={handleDelete}
           />
         </fieldset>
-        <fieldset className="flex flex-col gap-2 ">
+        <fieldset className="flex flex-col gap-2">
           <h1 className="form-title">Skills</h1>
 
           <Skills
@@ -116,7 +116,7 @@ export default function Form({
             handleSuccessModalMessage={handleSuccessModalMessage}
           />
         </fieldset>
-        <fieldset className="flex flex-col gap-2 ">
+        <fieldset className="flex flex-col gap-2">
           <h1 className="form-title">Custom</h1>
 
           <Custom

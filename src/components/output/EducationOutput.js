@@ -7,7 +7,7 @@ import BulletPoint from "../UI/bulletPoint";
 export default function WorkExpOutput({ educationArr }) {
   const ctx = useContext(ThemeContext);
   return (
-    <div className="flex flex-col   border-sky-500 px-8 ">
+    <div className="flex flex-col border-sky-500 px-8">
       {educationArr.length >= 1 ? (
         <h1
           className={`font-medium  ${ctx.theme.text} border-b-2 text-lg ${ctx.theme.border}`}>
@@ -20,9 +20,9 @@ export default function WorkExpOutput({ educationArr }) {
         <div className="w-full flex-col pl-3" key={uniqid()}>
           <div className="flex  justify-between">
             <div className="flex gap-2">
-              <h1 className="font-medium ">{education.institution}</h1>
+              <h1 className="font-medium">{education.institution}</h1>
               <p>-</p>
-              <p className="italic ">{education.degree}</p>
+              <p className="italic">{education.degree}</p>
             </div>
             <div className="flex items-center  gap-2">
               <p className="text-sm italic">
@@ -32,7 +32,7 @@ export default function WorkExpOutput({ educationArr }) {
               <p className="text-sm italic">{formatDate(education.endDate)}</p>
             </div>
           </div>
-          <div className="flex flex-col pl-3 ">
+          <div className="flex flex-col pl-3">
             <BulletPoint text={education.bulletPoint1}/>
             <BulletPoint text={education.bulletPoint2}/>
             <BulletPoint text={education.bulletPoint3}/>

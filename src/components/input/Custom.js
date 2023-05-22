@@ -71,13 +71,13 @@ export default function Custom({
       </div>
 
       {showDate && (
-        <div className="flex flex-col ">
+        <div className="flex flex-col">
           <div className="flex justify-evenly sm:flex-col sm:max-w-[300px]">
-            <div className="flex flex-col ">
+            <div className="flex flex-col">
               <label htmlFor="from-date">From Date:</label>
               <motion.input
                 whileFocus={{scale: 1.05}}
-                className="w-full md:w-[258px] lg:w-[258px] rounded shadow border text-slate-400  border-slate-400 focus:border-sky-500 focus:outline-none"
+                className="w-full md:w-[258px] lg:w-[258px] rounded shadow border text-slate-400 border-slate-400 focus:border-sky-500 focus:outline-none"
                 type="date"
                 id="from-date"
                 name="startDate"
@@ -101,7 +101,7 @@ export default function Custom({
         </div>
       )}
       <div className="flex justify-center">
-        <div className="w-[90%] flex flex-col  ">
+        <div className="w-[90%] flex flex-col">
           <label>Bullet Points: (4 Max)</label>
           <div className="w-full flex flex-col gap-2">
             {bulletPointInputArr}
@@ -130,7 +130,7 @@ export default function Custom({
             >
               Add Bullet Point
             </motion.button>
-            <div className=" flex justify-evenly gap-2 py-2 ">
+            <div className=" flex justify-evenly gap-2 py-2">
               <motion.button
                 whileTap={{scale: 0.8}}
                 onClick={(event) => {

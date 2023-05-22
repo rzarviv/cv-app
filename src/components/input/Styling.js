@@ -24,9 +24,9 @@ const StylingElement = ({ name, colorLeft, colorRight }) => {
 
 const Styling = () => {
   return (
-    <div className="w-full h-full max-w-[700px] ">
+    <div className="w-full h-full max-w-[700px]">
       <h1 className="text-3xl text-sky-500 font-bold px-10 py-2">Theme:</h1>
-      <div className="px-10 h-fit gap-2 flex flex-wrap ">
+      <div className="px-10 h-fit gap-2 flex flex-wrap">
         {Array.from(themes2.entries()).map(([themeName, theme]) => {
           return (
             <StylingElement
