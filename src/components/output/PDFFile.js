@@ -12,6 +12,7 @@ import ThemeContext from "../../store/theme-context";
 import { useContext } from "react";
 import { formatDate, formatDateOrBlank } from "../../tools/formatDate";
 import BulletPoint from "../UI/bulletPoint";
+import Skill from "../UI/skill";
 
 //this file length is sub optimal to say the least and it can be broken down to multiple components
 //Although due to npm react-to-print issue related to printing multiple components
@@ -75,7 +76,7 @@ const PDFFile = forwardRef(
                     </div>
 
                     <a
-                      className=" text-left"
+                      className="text-left"
                       href={personalInfo.linkedinLink}
                       target="_blank"
                       rel="noreferrer">
@@ -91,7 +92,7 @@ const PDFFile = forwardRef(
                       <FontAwesomeIcon icon={faGlobe} />
                     </div>
                     <a
-                      className=" text-left"
+                      className="text-left"
                       href={personalInfo.websiteLink}
                       target="_blank"
                       rel="noreferrer">
@@ -105,10 +106,10 @@ const PDFFile = forwardRef(
           {personalInfo.summarySection && (
             <div className="w-full px-8 pt-2">
               <h1
-                className={`font-medium  ${ctx.theme.text} text-xl border-b-2 ${ctx.theme.border}`}>
+                className={`font-medium ${ctx.theme.text} text-xl border-b-2 ${ctx.theme.border}`}>
                 Summary
               </h1>
-              <p className="text-slate-800 pl-2 py-1 break  text-left">
+              <p className="text-slate-800 pl-2 py-1 break text-left">
                 {personalInfo.summarySection}
               </p>
             </div>
@@ -117,7 +118,7 @@ const PDFFile = forwardRef(
         <div className="flex flex-col gap-2 border-sky-500 px-8 ">
           {projectsArr.length >= 1 ? (
             <h1
-              className={`font-medium  ${ctx.theme.text} text-lg border-b-2 ${ctx.theme.border}`}>
+              className={`font-medium ${ctx.theme.text} text-lg border-b-2 ${ctx.theme.border}`}>
               Projects
             </h1>
           ) : (
@@ -259,77 +260,16 @@ const PDFFile = forwardRef(
 
           <div className="w-full flex-col py-2" key={uniqid()}>
             <div className="flex pl-2 gap-2 flex-wrap">
-              {skills.skill1 ? (
-                <p className={`text-white ${ctx.theme.bg} rounded-md px-2`}>
-                  {skills.skill1}
-                </p>
-              ) : (
-                ""
-              )}
-              {skills.skill2 ? (
-                <p className={`text-white ${ctx.theme.bg} rounded-md px-2`}>
-                  {skills.skill2}
-                </p>
-              ) : (
-                ""
-              )}
-              {skills.skill3 ? (
-                <p className={`text-white ${ctx.theme.bg} rounded-md px-2`}>
-                  {skills.skill3}
-                </p>
-              ) : (
-                ""
-              )}
-
-              {skills.skill4 ? (
-                <p className={`text-white ${ctx.theme.bg} rounded-md px-2`}>
-                  {skills.skill4}
-                </p>
-              ) : (
-                ""
-              )}
-              {skills.skill5 ? (
-                <p className={`text-white ${ctx.theme.bg} rounded-md px-2`}>
-                  {skills.skill5}
-                </p>
-              ) : (
-                ""
-              )}
-              {skills.skill6 ? (
-                <p className={`text-white ${ctx.theme.bg} rounded-md px-2`}>
-                  {skills.skill6}
-                </p>
-              ) : (
-                ""
-              )}
-              {skills.skill7 ? (
-                <p className={`text-white ${ctx.theme.bg} rounded-md px-2`}>
-                  {skills.skill7}
-                </p>
-              ) : (
-                ""
-              )}
-              {skills.skill8 ? (
-                <p className={`text-white ${ctx.theme.bg} rounded-md px-2`}>
-                  {skills.skill8}
-                </p>
-              ) : (
-                ""
-              )}
-              {skills.skill9 ? (
-                <p className={`text-white ${ctx.theme.bg} rounded-md px-2`}>
-                  {skills.skill9}
-                </p>
-              ) : (
-                ""
-              )}
-              {skills.skill10 ? (
-                <p className={`text-white ${ctx.theme.bg} rounded-md px-2`}>
-                  {skills.skill10}
-                </p>
-              ) : (
-                ""
-              )}
+              <Skill text={skills.skill1} />
+              <Skill text={skills.skill2} />
+              <Skill text={skills.skill3} />
+              <Skill text={skills.skill4} />
+              <Skill text={skills.skill5} />
+              <Skill text={skills.skill6} />
+              <Skill text={skills.skill7} />
+              <Skill text={skills.skill8} />
+              <Skill text={skills.skill9} />
+              <Skill text={skills.skill10} />
             </div>
           </div>
         </div>
