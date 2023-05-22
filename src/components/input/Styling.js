@@ -2,33 +2,24 @@ import React from "react";
 import { useContext } from "react";
 import ThemeContext from "../../store/theme-context";
 import themes2 from "../UI/themes";
+import capitalize from "../../tools/capitalize";
 
-const StylingElement = (props) => {
+const StylingElement = ({ name, colorLeft, colorRight }) => {
   const ctx = useContext(ThemeContext);
-  const themeName = String(props.name);
-  const themeText = capitalize(themeName);
+  const themeLabel = capitalize(name);
 
   return (
     <div className="relative flex h-12 sm:w-full">
-      <div className={`styling-element-left ${props.colorLeft}`}></div>
-      <div className={`styling-element-right ${props.colorRight}`}></div>
+      <div className={`styling-element-left ${colorLeft}`}></div>
+      <div className={`styling-element-right ${colorRight}`}></div>
       <button
         className="absolute left-[50%] translate-x-[-50%] translate-y-[-50%] top-[50%] rounded font-bold hover:text-xl text-white "
-        onClick={() => ctx.onChangeTheme(themeName)}
+        onClick={() => ctx.onChangeTheme(name)}
         type="button">
-        {themeText}
+        {themeLabel}
       </button>
     </div>
   );
-};
-
-const capitalize = (str) => {
-  const arr = str.split(" ");
-
-  for (var i = 0; i < arr.length; i++) {
-    arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
-  }
-  return arr.join(" ");
 };
 
 const Styling = () => {
@@ -46,54 +37,6 @@ const Styling = () => {
             />
           );
         })}
-
-        {/*themes2.forEach((theme, themeName) => {
-          <StylingElement
-            name={themeName}
-            colorLeft={theme.bg}
-            colorRight={String(theme.text).replace("bg-", "text-")}
-          />;
-        })*/}
-        {/*<StylingElement
-          name="marshmallow"
-          colorLeft="bg-[#372948]"
-          colorRight="bg-pink-400"
-        />
-        <StylingElement
-          name="sky"
-          colorLeft="bg-slate-800"
-          colorRight="bg-sky-500"
-        />
-        <StylingElement
-          name="earth"
-          colorLeft="bg-[#395144]"
-          colorRight="bg-[#EABC7F]"
-        />
-        <StylingElement
-          name="space"
-          colorLeft="bg-[#181818]"
-          colorRight="bg-[#9759FF]"
-        />
-        <StylingElement
-          name="desert sunset"
-          colorLeft="bg-[#493323]"
-          colorRight="bg-[#FFC996]"
-        />
-        <StylingElement
-          name="maccabi"
-          colorLeft="bg-[#203E5F]"
-          colorRight="bg-[#FFCC00]"
-        />
-        <StylingElement
-          name="mastik"
-          colorLeft="bg-[#323232]"
-          colorRight="bg-[#FA5EAB]"
-        />
-        <StylingElement
-          name="lanister"
-          colorLeft="bg-[#DFB160]"
-          colorRight="bg-[#5F093D]"
-  />*/}
       </div>
     </div>
   );
