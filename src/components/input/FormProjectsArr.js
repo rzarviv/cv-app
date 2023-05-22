@@ -21,7 +21,7 @@ export default function FormProjectsArr({ projectsArr, handleDelete }) {
                     {project.projectName}
                   </h1>
                   <p className="text-sky-500">-</p>
-                  <h1 className="text-white ">{project.tech}</h1>
+                  <h1 className="text-white">{project.tech}</h1>
                 </div>
                 <button
                   onClick={(e) => {

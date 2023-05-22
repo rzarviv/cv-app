@@ -42,7 +42,7 @@ export default function WorkExp({
   useEffect(() => clearBulletPoints(), [workArr]);
 
   return (
-    <div className="flex flex-col gap-2 ">
+    <div className="flex flex-col gap-2">
       <div className="flex justify-evenly sm:flex-col sm:max-w-[300px]">
         <div className="flex flex-col">
           <label htmlFor="company">Company:</label>
@@ -90,7 +90,7 @@ export default function WorkExp({
           </label>
           <motion.input
             whileFocus={{ scale: 1.05 }}
-            className=" w-full md:w-[258px] lg:w-[258px] rounded shadow text-slate-400 border border-slate-400 focus:border-sky-500 focus:outline-none"
+            className="w-full md:w-[258px] lg:w-[258px] rounded shadow text-slate-400 border border-slate-400 focus:border-sky-500 focus:outline-none"
             type="date"
             id="to-date"
             name="endDate"
@@ -106,13 +106,13 @@ export default function WorkExp({
           <motion.button
             whileTap={{ scale: 0.8 }}
             onClick={handleBulletPointsInput}
-            className=" w-full bg-slate-400 text-white rounded"
+            className="w-full bg-slate-400 text-white rounded"
           >
             Add Bullet Point
           </motion.button>
         </div>
       </div>
-      <div className="flex justify-evenly gap-2 py-2 ">
+      <div className="flex justify-evenly gap-2 py-2">
         <motion.button
           whileTap={{ scale: 0.8 }}
           type={"button"}

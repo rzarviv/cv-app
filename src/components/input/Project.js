@@ -18,7 +18,7 @@ export default function Project({
     return (
       <motion.input
         whileFocus={{scale: 1.05}}
-        className=" pl-2 w-full rounded shadow text-slate-400 border border-slate-400 focus:border-sky-500 focus:outline-none"
+        className="pl-2 w-full rounded shadow text-slate-400 border border-slate-400 focus:border-sky-500 focus:outline-none"
         type="text"
         id="bulletPoints"
         placeholder="EXAMPLE: Utilized React to..."
@@ -41,14 +41,14 @@ export default function Project({
   useEffect(() => clearBulletPoints(), [projectsArr]);
 
   return (
-    <div className="flex flex-col gap-2 ">
+    <div className="flex flex-col gap-2">
       <div className="flex justify-evenly sm:flex-col sm:max-w-[300px]">
         <div className="flex flex-col">
           <label htmlFor="company">Project Name:</label>
           <motion.input
             whileFocus={{scale: 1.05}}
             type="text"
-            className="rounded   pl-2 shadow border border-slate-400 focus:border-sky-500 focus:outline-none"
+            className="rounded pl-2 shadow border border-slate-400 focus:border-sky-500 focus:outline-none"
             placeholder="Project Name..."
             name="projectName"
             onChange={handleProject}
@@ -84,7 +84,7 @@ export default function Project({
         </div>
       </div>
 
-      <div className=" flex justify-evenly gap-2 py-2 ">
+      <div className="flex justify-evenly gap-2 py-2">
         <motion.button
           whileTap={{scale: 0.8}}
           type="button"

@@ -21,6 +21,7 @@ export default function Controller({
     websiteLink: "",
     summarySection: "",
   });
+
   const [showSummary, setShowSummary] = useState(false);
 
   const [workExperience, setWorkExperience] = useState({
@@ -89,6 +90,7 @@ export default function Controller({
       return { ...prevInfo, [event.target.name]: event.target.value };
     });
   }
+
   function handleSummary() {
     setShowSummary((prevShow) => !prevShow);
   }
@@ -98,6 +100,7 @@ export default function Controller({
       return { ...prevWork, [event.target.name]: event.target.value };
     });
   }
+
   function handleWorkArr() {
     setWorkArr((prevArr) => [...prevArr, { ...workExperience, id: uniqid() }]);
     setWorkExperience((prevWork) => {
@@ -114,21 +117,28 @@ export default function Controller({
       };
     });
   }
+
   function handleDelete(type, id) {
-    if (type === "education") {
-      setEducationArr((prevArr) => {
-        return prevArr.filter((education) => education.id !== id);
-      });
-    }
-    if (type === "work") {
-      setWorkArr((prevArr) => {
-        return prevArr.filter((work) => work.id !== id);
-      });
-    }
-    if (type === "project") {
-      setProjectsArr((prevArr) => {
-        return prevArr.filter((project) => project.id !== id);
-      });
+    switch (type) {
+      case "education": {
+        setEducationArr((prevArr) => {
+          return prevArr.filter((education) => education.id !== id);
+        });
+        break;
+      }
+      case "work": {
+        setWorkArr((prevArr) => {
+          return prevArr.filter((work) => work.id !== id);
+        });
+        break;
+      }
+      case "project": {
+        setProjectsArr((prevArr) => {
+          return prevArr.filter((project) => project.id !== id);
+        });
+        break;
+      }
+      default:
     }
   }
 
@@ -137,6 +147,7 @@ export default function Controller({
       return { ...prevEducation, [event.target.name]: event.target.value };
     });
   }
+
   function handleEducationArr() {
     setEducationArr((prevArr) => [...prevArr, { ...education, id: uniqid() }]);
     setEducation(() => {
@@ -152,11 +163,13 @@ export default function Controller({
       };
     });
   }
+
   function handleProject(event) {
     setProject((prevProject) => {
       return { ...prevProject, [event.target.name]: event.target.value };
     });
   }
+
   function handleProjectsArr() {
     setProjectsArr((prevArr) => [...prevArr, { ...project, id: uniqid() }]);
     setProject(() => {
@@ -170,12 +183,14 @@ export default function Controller({
       };
     });
   }
+
   function handleSkill(event) {
     event.preventDefault();
     setSkill((prevSkill) => {
       return { ...prevSkill, [event.target.name]: event.target.value };
     });
   }
+
   function resetSkill(event) {
     event.preventDefault();
     setSkill(() => {
@@ -193,12 +208,14 @@ export default function Controller({
       };
     });
   }
+
   function handleCustom(event) {
     event.preventDefault();
     setCustom((prevCustom) => {
       return { ...prevCustom, [event.target.name]: event.target.value };
     });
   }
+
   const [showStyling, setShowStyling] = useState(false);
 
   const componentRef = createRef();
@@ -214,8 +231,8 @@ export default function Controller({
         animate={{ y: 0 }}
         initial={{ y: -100 }}
         transition={{ ease: "easeIn", duration: 0.4 }}
-        className="header text-xxl box-border flex w-full items-center justify-between gap-5 bg-sky-500 p-3 pb-24 font-bold text-white sm:flex-col sm:gap-0 ">
-        <p className="pl-4 text-center text-4xl sm:pl-0 sm:text-2xl ">
+        className="header text-xxl box-border flex w-full items-center justify-between gap-5 bg-sky-500 p-3 pb-24 font-bold text-white sm:flex-col sm:gap-0">
+        <p className="pl-4 text-center text-4xl sm:pl-0 sm:text-2xl">
           Easy CV
         </p>
         <div className="flex">
@@ -225,8 +242,8 @@ export default function Controller({
         </div>
       </motion.div>
 
-      <div className="flex items-center justify-center ">
-        <div className="absolute top-20 flex justify-evenly gap-5 sm:flex-col sm:items-center md:flex-col lg:flex-row ">
+      <div className="flex items-center justify-center">
+        <div className="absolute top-20 flex justify-evenly gap-5 sm:flex-col sm:items-center md:flex-col lg:flex-row">
           <motion.div
             animate={{ y: 0 }}
             initial={{ y: 100 }}
@@ -260,6 +277,7 @@ export default function Controller({
                 <Styling />
               </Suspense>
             )}
+
             {!showStyling && (
               <Form
                 personalInfo={personalInfo}
@@ -322,7 +340,7 @@ export default function Controller({
           animate={{ opacity: 1, scale: 1 }}
           initial={{ opacity: 0.2, scale: 0 }}
           transition={{ ease: "easeInOut", duration: 0.4 }}
-          className="fixed bottom-[0px] w-full rounded-md border-2 border-sky-500 bg-sky-500 px-2 text-2xl font-bold text-white sm:block md:block lg:hidden ">
+          className="fixed bottom-[0px] w-full rounded-md border-2 border-sky-500 bg-sky-500 px-2 text-2xl font-bold text-white sm:block md:block lg:hidden">
           <FontAwesomeIcon icon={faFileInvoice} /> Preview/Export
         </motion.button>
       </div>

@@ -16,7 +16,7 @@ export default function Skills({
     return (
       <motion.input
         whileFocus={{scale: 1.05}}
-        className=" pl-2 w-full rounded shadow text-slate-400 border border-slate-400 focus:border-sky-500 focus:outline-none"
+        className="pl-2 w-full rounded shadow text-slate-400 border border-slate-400 focus:border-sky-500 focus:outline-none"
         type="text"
         placeholder="EXAMPLE: React"
         onChange={handleSkill}
@@ -34,7 +34,7 @@ export default function Skills({
   }
 
   return (
-    <div className="flex flex-col    gap-2  ">
+    <div className="flex flex-col gap-2">
       <div className="flex justify-center items-center">
         <div className="flex flex-col w-[90%]">
           <label htmlFor="company">Skill:</label>
@@ -48,7 +48,7 @@ export default function Skills({
             Add Skill
           </motion.button>
 
-          <div className=" flex justify-evenly gap-2 py-2 ">
+          <div className="flex justify-evenly gap-2 py-2">
             <motion.button
               whileTap={{scale: 0.8}}
               onClick={(event) => {

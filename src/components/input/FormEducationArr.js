@@ -21,7 +21,7 @@ export default function FormEducationArr({ educationArr, handleDelete }) {
                     {education.institution}
                   </h1>
                   <p className="text-sky-500">-</p>
-                  <h1 className="text-white ">{education.degree}</h1>
+                  <h1 className="text-white">{education.degree}</h1>
                 </div>
                 <button
                   onClick={(e) => {

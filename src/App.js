@@ -13,8 +13,6 @@ function App() {
   });
   function handleTheme(themeInput) {
     setTheme(() => {
-      //console.log(themes[`${themeInput}`].bg);
-      //console.log(themes[`${themeInput}`].text);
       return themes2.get(themeInput);
     });
   }

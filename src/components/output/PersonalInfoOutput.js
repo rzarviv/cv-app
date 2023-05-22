@@ -26,7 +26,7 @@ const PersonalInfoOutput = ({ personalInfo }) => {
 
       <div
         className={`${ctx.theme.bg} flex gap-2 text-white w-full items-center justify-center px-2 pb-1 text-center`}>
-        <div className="flex justify-center items-center gap-1 ">
+        <div className="flex justify-center items-center gap-1">
           {personalInfo.phoneNumber && (
             <>
               <div className={`${ctx.theme.icons} text-sm`}>
@@ -37,11 +37,11 @@ const PersonalInfoOutput = ({ personalInfo }) => {
             </>
           )}
         </div>
-        <div className="flex gap-2 ">
+        <div className="flex gap-2">
           <div className="flex justify-center items-center gap-1">
             {personalInfo.email && (
               <>
-                <div className={`${ctx.theme.icons} text-sm `}>
+                <div className={`${ctx.theme.icons} text-sm`}>
                   {" "}
                   <FontAwesomeIcon icon={faEnvelope} />
                 </div>
@@ -53,13 +53,13 @@ const PersonalInfoOutput = ({ personalInfo }) => {
           <div className="flex justify-center items-center gap-1">
             {personalInfo.linkedinLink && (
               <>
-                <div className={`${ctx.theme.icons} text-sm `}>
+                <div className={`${ctx.theme.icons} text-sm`}>
                   {" "}
                   <FontAwesomeIcon icon={faLink} />
                 </div>
 
                 <a
-                  className=" text-left"
+                  className="text-left"
                   href={personalInfo.linkedinLink}
                   target="_blank"
                   rel="noreferrer">
@@ -71,11 +71,11 @@ const PersonalInfoOutput = ({ personalInfo }) => {
           <div className="flex justify-center items-center gap-1">
             {personalInfo.websiteLink && (
               <>
-                <div className={`${ctx.theme.icons} text-sm `}>
+                <div className={`${ctx.theme.icons} text-sm`}>
                   <FontAwesomeIcon icon={faGlobe} />
                 </div>
                 <a
-                  className=" text-left"
+                  className="text-left"
                   href={personalInfo.websiteLink}
                   target="_blank"
                   rel="noreferrer">
