@@ -137,6 +137,7 @@ export default function Controller({
       return { ...prevEducation, [event.target.name]: event.target.value };
     });
   }
+
   function handleEducationArr() {
     setEducationArr((prevArr) => [...prevArr, { ...education, id: uniqid() }]);
     setEducation(() => {
@@ -152,11 +153,13 @@ export default function Controller({
       };
     });
   }
+
   function handleProject(event) {
     setProject((prevProject) => {
       return { ...prevProject, [event.target.name]: event.target.value };
     });
   }
+
   function handleProjectsArr() {
     setProjectsArr((prevArr) => [...prevArr, { ...project, id: uniqid() }]);
     setProject(() => {
@@ -170,12 +173,14 @@ export default function Controller({
       };
     });
   }
+
   function handleSkill(event) {
     event.preventDefault();
     setSkill((prevSkill) => {
       return { ...prevSkill, [event.target.name]: event.target.value };
     });
   }
+
   function resetSkill(event) {
     event.preventDefault();
     setSkill(() => {
@@ -193,12 +198,14 @@ export default function Controller({
       };
     });
   }
+
   function handleCustom(event) {
     event.preventDefault();
     setCustom((prevCustom) => {
       return { ...prevCustom, [event.target.name]: event.target.value };
     });
   }
+  
   const [showStyling, setShowStyling] = useState(false);
 
   const componentRef = createRef();
@@ -215,9 +222,7 @@ export default function Controller({
         initial={{ y: -100 }}
         transition={{ ease: "easeIn", duration: 0.4 }}
         className="header text-xxl box-border flex w-full items-center justify-between gap-5 bg-sky-500 p-3 pb-24 font-bold text-white sm:flex-col sm:gap-0">
-        <p className="pl-4 text-center text-4xl sm:pl-0 sm:text-2xl">
-          Easy CV
-        </p>
+        <p className="pl-4 text-center text-4xl sm:pl-0 sm:text-2xl">Easy CV</p>
         <div className="flex">
           <p className="pr-4 text-center text-xl sm:pr-0 sm:text-lg">
             The easier way to build a resume
@@ -232,7 +237,7 @@ export default function Controller({
             initial={{ y: 100 }}
             transition={{ ease: "easeIn", duration: 0.4 }}
             className="min-h-[850px] rounded-md bg-gray-100 p-4 text-gray-800 shadow-lg sm:min-w-[340px] sm:max-w-[50%] md:min-w-[550px] lg:min-w-[750px]">
-            <div className="flex w-full justify-evenly rounded-md border-2  border-sky-500 shadow-md">
+            <div className="flex w-full justify-evenly rounded-md border-2 border-sky-500 shadow-md">
               <button
                 onClick={() => setShowStyling(() => false)}
                 className={
@@ -248,8 +253,8 @@ export default function Controller({
                 className={
                   "w-[50%] " +
                   (showStyling
-                    ? "rounded border-sky-500 bg-slate-800  text-lg text-white"
-                    : "text-sky-500 hover:rounded hover:bg-sky-500 hover:font-bold hover:text-white ")
+                    ? "rounded border-sky-500 bg-slate-800 text-lg text-white"
+                    : "text-sky-500 hover:rounded hover:bg-sky-500 hover:font-bold hover:text-white")
                 }>
                 Styling
               </button>

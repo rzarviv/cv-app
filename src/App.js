@@ -5,16 +5,16 @@ import {useState} from "react";
 import themes2 from "./components/UI/themes";
 
 function App() {
+  
   const [theme, setTheme] = useState({
     bg: "bg-slate-800",
     text: "text-sky-400",
     border: "border-sky-400",
     icons: "text-sky-600",
   });
+
   function handleTheme(themeInput) {
     setTheme(() => {
-      //console.log(themes[`${themeInput}`].bg);
-      //console.log(themes[`${themeInput}`].text);
       return themes2.get(themeInput);
     });
   }
