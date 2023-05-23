@@ -44,10 +44,8 @@ const PDFFile = forwardRef(
               {personalInfo.phoneNumber && (
                 <>
                   <div className={`text-sm ${ctx.theme.icons}`}>
-                    {" "}
                     <FontAwesomeIcon icon={faPhone} />
                   </div>
-
                   <p className="break-all text-left">
                     {personalInfo.phoneNumber}
                   </p>
@@ -59,7 +57,6 @@ const PDFFile = forwardRef(
                 {personalInfo.email && (
                   <>
                     <div className={`text-sm ${ctx.theme.icons}`}>
-                      {" "}
                       <FontAwesomeIcon icon={faEnvelope} />
                     </div>
 
@@ -71,7 +68,6 @@ const PDFFile = forwardRef(
                 {personalInfo.linkedinLink && (
                   <>
                     <div className={`text-sm ${ctx.theme.icons}`}>
-                      {" "}
                       <FontAwesomeIcon icon={faLink} />
                     </div>
 

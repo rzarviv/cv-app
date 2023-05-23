@@ -42,10 +42,8 @@ const PersonalInfoOutput = ({ personalInfo }) => {
             {personalInfo.email && (
               <>
                 <div className={`${ctx.theme.icons} text-sm`}>
-                  {" "}
                   <FontAwesomeIcon icon={faEnvelope} />
                 </div>
-
                 <p className="break-all text-left">{personalInfo.email}</p>
               </>
             )}
@@ -54,10 +52,8 @@ const PersonalInfoOutput = ({ personalInfo }) => {
             {personalInfo.linkedinLink && (
               <>
                 <div className={`${ctx.theme.icons} text-sm`}>
-                  {" "}
                   <FontAwesomeIcon icon={faLink} />
                 </div>
-
                 <a
                   className="text-left"
                   href={personalInfo.linkedinLink}

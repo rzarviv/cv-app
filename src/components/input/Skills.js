@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import uniqid from "uniqid";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Skills({
   handleSkill,
@@ -15,15 +15,14 @@ export default function Skills({
 
     return (
       <motion.input
-        whileFocus={{scale: 1.05}}
+        whileFocus={{ scale: 1.05 }}
         className="pl-2 w-full rounded shadow text-slate-400 border border-slate-400 focus:border-sky-500 focus:outline-none"
         type="text"
         placeholder="EXAMPLE: React"
         onChange={handleSkill}
         name={skillNumber}
         value={skills.skillNumber}
-        key={uniqid()}
-      ></motion.input>
+        key={uniqid()}></motion.input>
     );
   }
   function handleSkillsInput(e) {
@@ -41,23 +40,23 @@ export default function Skills({
 
           {skillsInputArr}
           <motion.button
-            whileTap={{scale: 0.8}}
+            type="button"
+            whileTap={{ scale: 0.8 }}
             onClick={handleSkillsInput}
-            className="bg-slate-400 rounded text-white"
-          >
+            className="bg-slate-400 rounded text-white">
             Add Skill
           </motion.button>
 
           <div className="flex justify-evenly gap-2 py-2">
             <motion.button
-              whileTap={{scale: 0.8}}
+              type="button"
+              whileTap={{ scale: 0.8 }}
               onClick={(event) => {
                 handleSkill(event);
                 handleSuccessModal();
                 handleSuccessModalMessage("Skills Section Added");
               }}
-              className="bg-sky-500 rounded shadow w-full text-white"
-            >
+              className="bg-sky-500 rounded shadow w-full text-white">
               +Add Section
             </motion.button>
           </div>

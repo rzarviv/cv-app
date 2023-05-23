@@ -232,9 +232,7 @@ export default function Controller({
         initial={{ y: -100 }}
         transition={{ ease: "easeIn", duration: 0.4 }}
         className="header text-xxl box-border flex w-full items-center justify-between gap-5 bg-sky-500 p-3 pb-24 font-bold text-white sm:flex-col sm:gap-0">
-        <p className="pl-4 text-center text-4xl sm:pl-0 sm:text-2xl">
-          Easy CV
-        </p>
+        <p className="pl-4 text-center text-4xl sm:pl-0 sm:text-2xl">Easy CV</p>
         <div className="flex">
           <p className="pr-4 text-center text-xl sm:pr-0 sm:text-lg">
             The easier way to build a resume
@@ -251,6 +249,7 @@ export default function Controller({
             className="min-h-[850px] rounded-md bg-gray-100 p-4 text-gray-800 shadow-lg sm:min-w-[340px] sm:max-w-[50%] md:min-w-[550px] lg:min-w-[750px]">
             <div className="flex w-full justify-evenly rounded-md border-2  border-sky-500 shadow-md">
               <button
+                type="button"
                 onClick={() => setShowStyling(() => false)}
                 className={
                   "w-[50%] " +
@@ -261,6 +260,7 @@ export default function Controller({
                 Info
               </button>
               <button
+                type="button"
                 onClick={() => setShowStyling(() => true)}
                 className={
                   "w-[50%] " +
@@ -327,7 +327,7 @@ export default function Controller({
                 custom={custom}
               />
             </div>
-            <motion.button
+            <motion.button type="button"
               whileTap={{ scale: 0.8 }}
               className="mt-5 rounded bg-sky-500 px-2 py-1 font-bold text-white sm:hidden md:hidden"
               onClick={handlePrint}>
@@ -335,7 +335,7 @@ export default function Controller({
             </motion.button>
           </div>
         </div>
-        <motion.button
+        <motion.button type="button"
           onClick={handlePrint}
           animate={{ opacity: 1, scale: 1 }}
           initial={{ opacity: 0.2, scale: 0 }}

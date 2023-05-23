@@ -12,8 +12,7 @@ export default function FormEducationArr({ educationArr, handleDelete }) {
             initial={{ opacity: 0, scale: 0 }}
             transition={{ ease: "easeIn", duration: 0.3 }}
             key={education.id}
-            className="flex justify-center"
-          >
+            className="flex justify-center">
             <div className="bg-slate-800 rounded-lg flex-col w-[90%] justify-center items-center gap-2">
               <div className="flex items-center gap-2 justify-between">
                 <div className="flex gap-2 items-center">
@@ -24,12 +23,12 @@ export default function FormEducationArr({ educationArr, handleDelete }) {
                   <h1 className="text-white">{education.degree}</h1>
                 </div>
                 <button
+                  type="button"
                   onClick={(e) => {
                     e.preventDefault();
                     handleDelete("education", education.id);
                   }}
-                  className="bg-red-500 rounded-r-lg text-white py-2 w-8"
-                >
+                  className="bg-red-500 rounded-r-lg text-white py-2 w-8">
                   <FontAwesomeIcon icon={faTrash} />
                 </button>
               </div>

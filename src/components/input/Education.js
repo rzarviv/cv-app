@@ -68,28 +68,29 @@ export default function Education({
       </div>
       <div className="flex justify-evenly sm:flex-col sm:max-w-[300px]">
         <div className="flex flex-col">
-          <label htmlFor="from-date">From Date:</label>
-          <motion.input
-            whileFocus={{ scale: 1.05 }}
-            className="w-full md:w-[258px] lg:w-[258px] rounded shadow border text-slate-400  border-slate-400 focus:border-sky-500 focus:outline-none"
-            type="date"
-            id="from-date"
-            name="startDate"
-            onChange={handleEducation}
-            value={education.startDate}></motion.input>
+          <label htmlFor="from-date">
+            From Date:
+            <motion.input
+              whileFocus={{ scale: 1.05 }}
+              className="block w-full md:w-[258px] lg:w-[258px] rounded shadow border text-slate-400  border-slate-400 focus:border-sky-500 focus:outline-none"
+              type="date"
+              name="startDate"
+              onChange={handleEducation}
+              value={education.startDate}></motion.input>
+          </label>
         </div>
         <div className="flex flex-col">
-          <label htmlFor="to-date" className="flex items-center gap-2">
-            To Date<p className="text-sm">(leave blank to mark present)</p>
+          <label htmlFor="to-date" className="items-center gap-2">
+            To Date
+            <span className="text-sm ml-2">(leave blank to mark present)</span>
+            <motion.input
+              whileFocus={{ scale: 1.05 }}
+              className="block w-full md:w-[258px] lg:w-[258px] rounded shadow text-slate-400 border border-slate-400 focus:border-sky-500 focus:outline-none"
+              type="date"
+              name="endDate"
+              onChange={handleEducation}
+              value={education.endDate}></motion.input>
           </label>
-          <motion.input
-            whileFocus={{ scale: 1.05 }}
-            className="w-full md:w-[258px] lg:w-[258px] rounded shadow text-slate-400 border border-slate-400 focus:border-sky-500 focus:outline-none"
-            type="date"
-            id="to-date"
-            name="endDate"
-            onChange={handleEducation}
-            value={education.endDate}></motion.input>
         </div>
       </div>
       <div className="flex justify-center w-full">
@@ -97,6 +98,7 @@ export default function Education({
           <label>Bullet Points: (4 Max)</label>
           <div className="flex flex-col gap-2">{bulletPointInputArr}</div>
           <motion.button
+            type="button"
             whileTap={{ scale: 0.8 }}
             onClick={handleBulletPointsInput}
             className="bg-slate-400 text-white rounded">
@@ -106,8 +108,8 @@ export default function Education({
       </div>
       <div className="flex justify-evenly gap-2 py-2">
         <motion.button
-          whileTap={{ scale: 0.8 }}
           type="button"
+          whileTap={{ scale: 0.8 }}
           onClick={() => {
             handleEducationArr();
             handleSuccessModal();
