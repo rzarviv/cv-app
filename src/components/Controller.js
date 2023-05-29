@@ -7,6 +7,7 @@ import Form from "./input/Form";
 import CvPreview from "./output/CvPreview";
 import { motion } from "framer-motion";
 import PDFFile from "./output/PDFFile";
+import Styling from "../components/input/Styling"
 
 export default function Controller({
   handleSuccessModal,
@@ -19,7 +20,7 @@ export default function Controller({
     email: "",
     linkedinLink: "",
     websiteLink: "",
-    summarySection: "",
+    summary: "",
   });
 
   const [showSummary, setShowSummary] = useState(false);
@@ -223,7 +224,7 @@ export default function Controller({
     content: () => componentRef.current,
   });
 
-  const Styling = lazy(() => import("../components/input/Styling"));
+  // const Styling = lazy(() => import("../components/input/Styling"));
 
   return (
     <div className="relative flex flex-col">
@@ -254,7 +255,7 @@ export default function Controller({
                 className={
                   "w-[50%] " +
                   (!showStyling
-                    ? "rounded border-sky-500 bg-slate-800  text-lg text-white"
+                    ? "rounded border-sky-500 bg-slate-800 text-lg text-white"
                     : "text-sky-500 hover:rounded hover:bg-sky-500 hover:font-bold hover:text-white")
                 }>
                 Info
@@ -265,7 +266,7 @@ export default function Controller({
                 className={
                   "w-[50%] " +
                   (showStyling
-                    ? "rounded border-sky-500 bg-slate-800  text-lg text-white"
+                    ? "rounded border-sky-500 bg-slate-800 text-lg text-white"
                     : "text-sky-500 hover:rounded hover:bg-sky-500 hover:font-bold hover:text-white ")
                 }>
                 Styling
@@ -273,9 +274,8 @@ export default function Controller({
             </div>
 
             {showStyling && (
-              <Suspense fallback={<h1>loading...</h1>}>
+             
                 <Styling />
-              </Suspense>
             )}
 
             {!showStyling && (
@@ -307,7 +307,7 @@ export default function Controller({
               />
             )}
           </motion.div>
-          <div className="">
+          <div>
             <CvPreview
               personalInfo={personalInfo}
               workExpArr={workArr}
@@ -327,7 +327,8 @@ export default function Controller({
                 custom={custom}
               />
             </div>
-            <motion.button type="button"
+            <motion.button
+              type="button"
               whileTap={{ scale: 0.8 }}
               className="mt-5 rounded bg-sky-500 px-2 py-1 font-bold text-white sm:hidden md:hidden"
               onClick={handlePrint}>
@@ -335,7 +336,8 @@ export default function Controller({
             </motion.button>
           </div>
         </div>
-        <motion.button type="button"
+        <motion.button
+          type="button"
           onClick={handlePrint}
           animate={{ opacity: 1, scale: 1 }}
           initial={{ opacity: 0.2, scale: 0 }}

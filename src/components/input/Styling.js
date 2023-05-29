@@ -14,7 +14,7 @@ const StylingElement = ({ name, colorLeft, colorRight }) => {
       <div className={`styling-element-right ${colorRight}`}></div>
       <button
         type="button"
-        className="absolute left-[50%] translate-x-[-50%] translate-y-[-50%] top-[50%] rounded font-bold hover:text-xl text-white "
+        className="absolute left-[50%] translate-x-[-50%] translate-y-[-50%] top-[50%] rounded font-bold hover:text-xl text-white"
         onClick={() => ctx.onChangeTheme(name)}>
         {themeLabel}
       </button>
@@ -33,7 +33,7 @@ const Styling = () => {
               key={themeName}
               name={themeName}
               colorLeft={theme.bg}
-              colorRight={theme.text.replace("text-", "bg-")}
+              colorRight={theme.text.replace('text', 'bg')}
             />
           );
         })}

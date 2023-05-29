@@ -48,11 +48,12 @@ export default function Form({
   const handleSuccessModalMessage = (message) => {
     setSuccessModalMessage(message);
   };
+
   return (
     <div className="h-full w-full">
       {showSuccessModal && <SuccessModal message={successModalMessage} />}
 
-      <form className="">
+      <div>
         <fieldset className="flex flex-col gap-2">
           <h1 className="form-title">Personal Information</h1>
           <PersonalInfoInput
@@ -126,7 +127,7 @@ export default function Form({
             handleSuccessModalMessage={handleSuccessModalMessage}
           />
         </fieldset>
-      </form>
+      </div>
     </div>
   );
 }

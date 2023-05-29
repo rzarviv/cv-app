@@ -99,14 +99,14 @@ const PDFFile = forwardRef(
               </div>
             </div>
           </div>
-          {personalInfo.summarySection && (
+          {personalInfo.summary && (
             <div className="w-full px-8 pt-2">
               <h1
                 className={`font-medium ${ctx.theme.text} text-xl border-b-2 ${ctx.theme.border}`}>
                 Summary
               </h1>
               <p className="text-slate-800 pl-2 py-1 break text-left">
-                {personalInfo.summarySection}
+                {personalInfo.summary}
               </p>
             </div>
           )}

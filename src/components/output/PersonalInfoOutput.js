@@ -14,11 +14,11 @@ const PersonalInfoOutput = ({ personalInfo }) => {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      {personalInfo.firstName && personalInfo.lastName ? (
+      {personalInfo?.firstName || personalInfo?.lastName ? (
         <div
           className={`${ctx.theme.bg} ${ctx.theme.text} flex gap-2 text-3xl font-bold px-2 pt-2 text-center justify-center w-full`}>
-          <h1>{capitalize(personalInfo.firstName)}</h1>
-          <h1>{capitalize(personalInfo.lastName)}</h1>
+          <h1>{capitalize(personalInfo?.firstName)}</h1>
+          <h1>{capitalize(personalInfo?.lastName)} </h1>
         </div>
       ) : (
         ""
@@ -82,14 +82,14 @@ const PersonalInfoOutput = ({ personalInfo }) => {
           </div>
         </div>
       </div>
-      {personalInfo.summarySection && (
+      {personalInfo.summary && (
         <div className="w-full bg-gray-100 px-8 pt-2">
           <h1
             className={`font-medium ${ctx.theme.text} text-xl border-b-2 ${ctx.theme.border}`}>
             Summary
           </h1>
           <p className="text-slate-800 pl-2 py-1 break text-left">
-            {personalInfo.summarySection}
+            {personalInfo.summary}
           </p>
         </div>
       )}

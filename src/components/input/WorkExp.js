@@ -42,7 +42,7 @@ export default function WorkExp({
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex justify-evenly sm:flex-col sm:max-w-[300px]">
+      <div className="flex justify-evenly gap-2 sm:flex-col sm:max-w-[300px]">
         <div className="flex flex-col">
           <label htmlFor="company">Company:</label>
           <motion.input
@@ -69,7 +69,7 @@ export default function WorkExp({
           </label>
         </div>
       </div>
-      <div className="flex justify-evenly sm:flex-col sm:max-w-[300px]">
+      <div className="flex justify-evenly gap-2 sm:flex-col sm:max-w-[300px]">
         <div className="flex flex-col">
           <label htmlFor="from-date">
             From Date:
