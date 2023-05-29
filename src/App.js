@@ -1,24 +1,26 @@
 import "./index.css";
 import Controller from "./components/Controller";
 import ThemeContext from "./store/theme-context";
-import {useState} from "react";
-import themes2 from "./components/UI/themes";
+import { useState } from "react";
+import themes from "./components/UI/themes";
 
 function App() {
-  const [theme, setTheme] = useState({
+  const [theme, setTheme] = useState(
+    themes.get("sky") /*{
     bg: "bg-slate-800",
     text: "text-sky-400",
     border: "border-sky-400",
     icons: "text-sky-600",
-  });
+  }*/
+  );
   function handleTheme(themeInput) {
     setTheme(() => {
-      return themes2.get(themeInput);
+      return themes.get(themeInput);
     });
   }
 
   return (
-    <ThemeContext.Provider value={{theme: theme, onChangeTheme: handleTheme}}>
+    <ThemeContext.Provider value={{ theme: theme, onChangeTheme: handleTheme }}>
       <Controller />
     </ThemeContext.Provider>
   );
