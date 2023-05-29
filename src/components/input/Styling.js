@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import ThemeContext from "../../store/theme-context";
-import themes2 from "../UI/themes";
+import themes from "../UI/themes";
 import capitalize from "../../tools/capitalize";
 
 const StylingElement = ({ name, colorLeft, colorRight }) => {
@@ -27,13 +27,13 @@ const Styling = () => {
     <div className="w-full h-full max-w-[700px] ">
       <h1 className="text-3xl text-sky-500 font-bold px-10 py-2">Theme:</h1>
       <div className="px-10 h-fit gap-2 flex flex-wrap ">
-        {Array.from(themes2.entries()).map(([themeName, theme]) => {
+        {Array.from(themes.entries()).map(([themeName, theme]) => {
           return (
             <StylingElement
               key={themeName}
               name={themeName}
               colorLeft={theme.bg}
-              colorRight={theme.text.replace("text-", "bg-")}
+              colorRight={theme.bg2}
             />
           );
         })}
