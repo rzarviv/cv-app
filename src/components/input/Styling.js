@@ -33,7 +33,7 @@ const Styling = () => {
               key={themeName}
               name={themeName}
               colorLeft={theme.bg}
-              colorRight={theme.text.replace("text-", "bg-")}
+              colorRight={theme.bg2}
             />
           );
         })}
